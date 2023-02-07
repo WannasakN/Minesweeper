@@ -7,7 +7,7 @@ def random_bom(rows: int, cols: int, bom_number: int) -> list:
     for row in range(rows):
         row_data = []
         for col in range(cols):
-            bomb = random.randint(0, 3)
+            bomb = random.randint(0, 1)
             if bomb == 1 and bom_number > 0:
                 if sum(row_data) <= -2:
                     continue
@@ -15,8 +15,7 @@ def random_bom(rows: int, cols: int, bom_number: int) -> list:
                 bom_number -= 1
             else:
                 row_data.append(0)           
-        mine.append(row_data)
-    
+        mine.append(row_data) 
     return mine
 
 
